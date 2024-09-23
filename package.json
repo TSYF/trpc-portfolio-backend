@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@trpc/server": "^10.45.2",
+    "bohr": "^1.0.577",
     "dotenv": "^16.4.5",
     "reflect-metadata": "^0.2.2",
     "sqlite3": "^5.1.7",
