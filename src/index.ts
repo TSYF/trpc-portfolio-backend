@@ -24,6 +24,9 @@ const projectRepo      = ds.getRepository(Project)
 const skillRepo        = ds.getRepository(Skill)
 
 const appRouter = router({
+    health: procedure.query(() => {
+        return "OK"
+    }),
     readProjects: procedure.query(async () => {
         console.log("=== readProjects ===");
         try {
