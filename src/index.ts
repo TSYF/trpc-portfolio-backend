@@ -6,6 +6,8 @@ import { Project } from './entities/Project'
 import { createHTTPHandler } from '@trpc/server/adapters/standalone'
 import { Skill } from './entities/Skill'
 import http from "http"
+import dotenv from 'dotenv'
+dotenv.config({ path: [".env.production.local", ".env.local", ".env.development.local", ".env.development", ".env"] })
 
 // const projectParser = z.object({
 //     id: z.bigint().optional(),
@@ -85,7 +87,11 @@ const server = http.createServer((req, res) => {
     }
     handler(req, res)
 })
-   
-server.listen(DEPLOYMENT_PORT!, DEPLOYMENT_HOST!)
+
+console.log(DEPLOYMENT_HOST);
+server.listen({
+    host: DEPLOYMENT_HOST,
+    port: DEPLOYMENT_PORT,
+})
 
 export type AppRouter = typeof appRouter
