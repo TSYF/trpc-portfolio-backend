@@ -86,6 +86,6 @@ const server = http.createServer((req, res) => {
     handler(req, res)
 })
    
-server.listen(+DEPLOYMENT_PORT!, DEPLOYMENT_HOST!)
+server.listen(DEPLOYMENT_PORT!, DEPLOYMENT_HOST!)
 
 export type AppRouter = typeof appRouter

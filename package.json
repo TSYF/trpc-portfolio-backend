@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "tsx watch src",
-    "start": "tsx server"
+    "start": "npm i"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
