@@ -13,4 +13,4 @@ jobs:
       - run: echo "DEPLOYMENT_HOST=0.0.0.0\nDEPLOYMENT_PORT=443\nALLOWED_ORIGIN=http://tomas-y-dev.web.app"
       - run: npm install
       # - run: npm run dev
-      - uses: actions/bohr@main
+      - uses: actions/bohr-io@main
