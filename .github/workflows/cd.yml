@@ -1,0 +1,21 @@
+name: Continuous Deployment Pipeline
+on: 
+  workflow_run:
+    workflows: [ "Continuous Integration Pipeline" ]
+    types:
+      - completed
+    
+# permissions: write-all
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+      - name: Pull Docker Image
+        run: sudo docker pull tsyf/trpc-portfolio-backend:latest
+
+      - name: Delete Old Container
+        run: sudo docker rm -f trpc-portfolio-backend-container || true
+        
+      - name: Run New Container
+        run: sudo docker run tsyf/trpc-portfolio-backend:latest --name trpc-portfolio-backend-container -p 8080:8080 -d
