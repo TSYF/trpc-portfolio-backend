@@ -6,4 +6,4 @@ COPY . .
 COPY docker/.env .
 RUN npm i -g pnpm && pnpm i
 
-ENTRYPOINT pnpm runserver
+CMD ["pnpm", "runserver"]
