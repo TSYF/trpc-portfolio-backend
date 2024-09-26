@@ -14,7 +14,7 @@ jobs:
       - name: Login Docker Hub
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_ACCESS_KEY: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_ACCESS_KEY: ${{ secrets.DOCKER_ACCESS_KEY }}
         run: docker login -u $DOCKER_USERNAME -p $DOCKER_ACCESS_KEY 
 
       - name: Build Docker Image
